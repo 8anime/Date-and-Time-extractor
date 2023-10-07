@@ -4,19 +4,12 @@ import re
 def extractDateFromInput(inputData):
     """This method extracts dates from the input it receives"""
     datePatterns = [
-        r'\d{4}-\d{2}-\d{2}',    # YYYY-MM-DD
-        r'\d{4}/\d{2}/\d{2}',    # YYYY/MM/DD
-        r'\d{2}/\d{2}/\d{4}',    # MM/DD/YYYY
-        r'\d{2}/\d{2}/\d{2}',    # MM/DD/YY
-        r'\d{4}-\d{2}',          # YYYY-MM
-        r'\d{4}/\d{2}',          # YYYY/MM
-        r'\d{2} \w+,? \d{4}',    # DD Month, YYYY or DD Mon, YYYY
-        r'\d{2}:\d{2}:\d{2}',    # HH:MM:SS (timestamp)
-        r'\d{2}:\d{2}',          # HH:MM (time format)
-        r'\w+ \d{1,2},? \d{4}',  # Month DD, YYYY or Mon DD, YYYY
-        r'\w+ \d{1,},? \d{4}',   # Month DD, YYYY or Mon DD, YYYY
-        r'\w+ \d{1,2} \d{4}',    # Month DD YYYY or Mon DD YYYY
-        r'\w+ \d{4}',            # Month YYYY or Mon YYYY
+        r'(\d{2,4}-\d{2,4}(?:-\d{2,4})?)',  # YYYY-MM-DD or MM-DD-YYYY or DD-MM-YYYY or MM-YYYY
+        r'(\d{2,4}/\d{2,4}(?:/\d{2,4})?)',  # MM/DD/YYYY or DD/MM/YYYY or YYYY/MM/DD or MM/YYYY
+        r'(\d{2} \w+,? \d{4})',             # DD Month, YYYY or DD Mon, YYYY
+        r'(\d{2}:\d{2}(?::\d{2})?)',        # HH:MM:SS (timestamp) or HH:MM (time format)
+        r'(\b(?:January|February|March|April|May|June|July|August|September|October|November|December|Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)(?:\s+)?\d{2},? \d{4})', # Month DD, YYYY or Mon DD, YYYY
+        r'(\b(?:January|February|March|April|May|June|July|August|September|October|November|December|Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)(?:\s+)?\d{4})',         # Month YYYY or Mon YYYY
     ]
 
     extractedDates = []
@@ -37,6 +30,9 @@ def extractDateFromInput(inputData):
         ]:
             extractedDates.append(word)
 
+    # Remove punctuation marks from extracted dates
+    extractedDates = [date.strip('.,') for date in extractedDates]
+    
     return extractedDates
 
 
