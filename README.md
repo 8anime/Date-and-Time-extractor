@@ -7,6 +7,7 @@ The Date Extractor App is a powerful tool designed to automatically extract date
 - [Getting Started](#getting-started)
   - [Installation](#installation)
   - [Usage](#usage)
+- [License](#license)
 
 ## Key Features
 - **Flexible Date And Time Recognition**: Recognizes a wide range of date and time formats, including YYYY-MM-DD, MM/DD/YYYY, HH:MM:SS, HH:MM and informal mentions like "yesterday" or "tomorrow."
