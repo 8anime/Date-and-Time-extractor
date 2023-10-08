@@ -17,7 +17,7 @@ The Date Extractor App is a powerful tool designed to automatically extract date
 ## Getting Started
 ### Installation
 To use the Date Extractor App, follow these installation steps:
-1. Clone this repository to your local machine. 'git clone https://github.com/8anime/date-extractor-app.git'
+1. Clone this repository to your local machine. 'git clone https://github.com/8anime/Date-and-Time-extractor.git'
 2. Navigate to the project directory.
 3. Install the required dependencies by running: pip install -r requirements.txt
 
