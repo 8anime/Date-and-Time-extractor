@@ -26,5 +26,6 @@ To use the Date Extractor App, follow these installation steps:
 3. Click the "Extract Dates" button to identify and extract dates.
 4. View the extracted dates in the text area or export them as needed.
 
-
+## License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
