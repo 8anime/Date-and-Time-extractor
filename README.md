@@ -23,7 +23,7 @@ To use the Date Extractor App, follow these installation steps:
 
 ### Usage
 1. Launch the app by running 'dateExtractorGUI.py' script in the 'dateExtractor folder' in the root directory.
-2. Load your CSV file.
+2. Load your CSV file. Ensure the file is located in the 'csvFolder' in the root directory
 3. Click the "Extract Dates" button to identify and extract dates.
 4. View the extracted dates in the text area or export them as needed.
 
